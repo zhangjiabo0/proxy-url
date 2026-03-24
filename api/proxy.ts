@@ -9,7 +9,7 @@ function getRandomTarget(targets: string[]) {
 export default async function handler(request: Request) {
   const url = new URL(request.url);
 
-  const targets = ((process as any).env.TARGET_HOSTS || "")
+  const targets = (process.env.TARGET_HOSTS || "")
     .split(",")
     .map(t => t.trim())
     .filter(Boolean);
